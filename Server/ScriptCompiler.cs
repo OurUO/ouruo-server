@@ -157,6 +157,13 @@ namespace Server
 
 		public static bool CompileCSScripts( bool debug, bool cache, out Assembly assembly )
 		{
+
+			Console.WriteLine("Server Scripts embedded version...");
+
+			assembly = null;
+			return true;
+
+			/*
 			Console.Write( "Scripts: Compiling C# scripts..." );
 			string[] files = GetScripts( "*.cs" );
 
@@ -283,6 +290,7 @@ namespace Server
 				assembly = results.CompiledAssembly;
 				return true;
 			}
+			*/
 		}
 
 		public static bool CompileVBScripts( out Assembly assembly )
