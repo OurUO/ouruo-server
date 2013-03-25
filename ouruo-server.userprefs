@@ -1,11 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\asperi\Documents\GitHub\ouruo-server\Server\NativeReader.cs">
-    <Files>
-      <File FileName="c:\Users\asperi\Documents\GitHub\ouruo-server\Server\Region.cs" Line="24" Column="14" />
-      <File FileName="c:\Users\asperi\Documents\GitHub\ouruo-server\Server\NativeReader.cs" Line="36" Column="29" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

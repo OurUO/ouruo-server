@@ -157,14 +157,8 @@ namespace Server
 
 		public static bool CompileCSScripts( bool debug, bool cache, out Assembly assembly )
 		{
-
-			Console.WriteLine("Server Scripts embedded version...");
-
-			assembly = null;
-			return true;
-
-			/*
 			Console.Write( "Scripts: Compiling C# scripts..." );
+			/*
 			string[] files = GetScripts( "*.cs" );
 
 			if( files.Length == 0 )
@@ -173,11 +167,15 @@ namespace Server
 				assembly = null;
 				return true;
 			}
+			*/
 
-			if( File.Exists( "Scripts/Output/Scripts.CS.dll" ) )
+			//if( File.Exists( "Scripts/Output/Scripts.CS.dll" ) )
+			if( File.Exists( "./Scripts.dll" ) )
 			{
-				if( cache && File.Exists( "Scripts/Output/Scripts.CS.hash" ) )
+				//if( cache && File.Exists( "Scripts/Output/Scripts.CS.hash" ) )
+				if (cache)
 				{
+					/*
 					try
 					{
 						byte[] hashCode = GetHashCode( "Scripts/Output/Scripts.CS.dll", files, debug );
@@ -221,9 +219,22 @@ namespace Server
 					catch
 					{
 					}
+					*/
+					assembly = Assembly.LoadFrom( "./Scripts.dll" );
+					
+					if( !m_AdditionalReferences.Contains( assembly.Location ) )
+					{
+						m_AdditionalReferences.Add( assembly.Location );
+					}
+					
+					Console.WriteLine( "done (cached)" );
+					
+					return true;
+
 				}
 			}
 
+			/*
 			DeleteFiles( "Scripts.CS*.dll" );
 
 			using ( CSharpCodeProvider provider = new CSharpCodeProvider() )
@@ -291,6 +302,8 @@ namespace Server
 				return true;
 			}
 			*/
+			assembly = null;
+			return true;
 		}
 
 		public static bool CompileVBScripts( out Assembly assembly )
