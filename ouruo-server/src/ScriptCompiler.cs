@@ -157,6 +157,7 @@ namespace Server
 
 		public static bool CompileCSScripts( bool debug, bool cache, out Assembly assembly )
 		{
+            /*
 			Console.Write( "Scripts: Compiling C# scripts..." );
 			string[] files = GetScripts( "*.cs" );
 
@@ -166,123 +167,133 @@ namespace Server
 				assembly = null;
 				return true;
 			}
+            */
+            if (File.Exists("ouruo-scripts.dll"))
+            {
+                assembly = Assembly.LoadFrom("ouruo-scripts.dll");
+                return true;
+            }
 
-			if( File.Exists( "Scripts/Output/Scripts.CS.dll" ) )
-			{
-				if( cache && File.Exists( "Scripts/Output/Scripts.CS.hash" ) )
-				{
-					try
-					{
-						byte[] hashCode = GetHashCode( "Scripts/Output/Scripts.CS.dll", files, debug );
+            Console.Write("Cannot find ouruo-scripts.dll file!");
+            assembly = null;
+            return false;
 
-						using( FileStream fs = new FileStream( "Scripts/Output/Scripts.CS.hash", FileMode.Open, FileAccess.Read, FileShare.Read ) )
-						{
-							using( BinaryReader bin = new BinaryReader( fs ) )
-							{
-								byte[] bytes = bin.ReadBytes( hashCode.Length );
-
-								if( bytes.Length == hashCode.Length )
-								{
-									bool valid = true;
-
-									for( int i = 0; i < bytes.Length; ++i )
-									{
-										if( bytes[i] != hashCode[i] )
-										{
-											valid = false;
-											break;
-										}
-									}
-
-									if( valid )
-									{
-										assembly = Assembly.LoadFrom( "Scripts/Output/Scripts.CS.dll" );
-
-										if( !m_AdditionalReferences.Contains( assembly.Location ) )
-										{
-											m_AdditionalReferences.Add( assembly.Location );
-										}
-
-										Console.WriteLine( "done (cached)" );
-
-										return true;
-									}
-								}
-							}
-						}
-					}
-					catch
-					{
-					}
-				}
-			}
-
-			DeleteFiles( "Scripts.CS*.dll" );
-
-			using ( CSharpCodeProvider provider = new CSharpCodeProvider() )
-			{
-				string path = GetUnusedPath( "Scripts.CS" );
-
-				CompilerParameters parms = new CompilerParameters( GetReferenceAssemblies(), path, debug );
-
-				string options = GetCompilerOptions( debug );
-
-				if( options != null )
-					parms.CompilerOptions = options;
-
-				if( Core.HaltOnWarning )
-					parms.WarningLevel = 4;
-
-#if !MONO
-				CompilerResults results = provider.CompileAssemblyFromFile( parms, files );
-#else
-				parms.CompilerOptions = String.Format( "{0} /nowarn:169,219,414 /recurse:Scripts/*.cs", parms.CompilerOptions );
-				CompilerResults results = provider.CompileAssemblyFromFile( parms, "" );
-#endif
-				m_AdditionalReferences.Add( path );
-
-				Display( results );
-
-#if !MONO
-				if( results.Errors.Count > 0 )
-				{
-					assembly = null;
-					return false;
-				}
-#else
-				if( results.Errors.Count > 0 ) {
-					foreach( CompilerError err in results.Errors ) {
-						if ( !err.IsWarning ) {
-							assembly = null;
-							return false;
-						}
-					}
-				}
-#endif
-
-
-				if( cache && Path.GetFileName( path ) == "Scripts.CS.dll" )
-				{
-					try
-					{
-						byte[] hashCode = GetHashCode( path, files, debug );
-
-						using( FileStream fs = new FileStream( "Scripts/Output/Scripts.CS.hash", FileMode.Create, FileAccess.Write, FileShare.None ) )
-						{
-							using( BinaryWriter bin = new BinaryWriter( fs ) )
-							{
-								bin.Write( hashCode, 0, hashCode.Length );
-							}
-						}
-					}
-					catch
-					{
-					}
-				}
-
-				assembly = results.CompiledAssembly;
-				return true;
-			}
+// 			if( File.Exists( "Scripts/Output/Scripts.CS.dll" ) )
+// 			{
+// 				if( cache && File.Exists( "Scripts/Output/Scripts.CS.hash" ) )
+// 				{
+// 					try
+// 					{
+// 						byte[] hashCode = GetHashCode( "Scripts/Output/Scripts.CS.dll", files, debug );
+// 
+// 						using( FileStream fs = new FileStream( "Scripts/Output/Scripts.CS.hash", FileMode.Open, FileAccess.Read, FileShare.Read ) )
+// 						{
+// 							using( BinaryReader bin = new BinaryReader( fs ) )
+// 							{
+// 								byte[] bytes = bin.ReadBytes( hashCode.Length );
+// 
+// 								if( bytes.Length == hashCode.Length )
+// 								{
+// 									bool valid = true;
+// 
+// 									for( int i = 0; i < bytes.Length; ++i )
+// 									{
+// 										if( bytes[i] != hashCode[i] )
+// 										{
+// 											valid = false;
+// 											break;
+// 										}
+// 									}
+// 
+// 									if( valid )
+// 									{
+// 										assembly = Assembly.LoadFrom( "Scripts/Output/Scripts.CS.dll" );
+// 
+// 										if( !m_AdditionalReferences.Contains( assembly.Location ) )
+// 										{
+// 											m_AdditionalReferences.Add( assembly.Location );
+// 										}
+// 
+// 										Console.WriteLine( "done (cached)" );
+// 
+// 										return true;
+// 									}
+// 								}
+// 							}
+// 						}
+// 					}
+// 					catch
+// 					{
+// 					}
+// 				}
+// 			}
+// 
+// 			DeleteFiles( "Scripts.CS*.dll" );
+// 
+// 			using ( CSharpCodeProvider provider = new CSharpCodeProvider() )
+// 			{
+// 				string path = GetUnusedPath( "Scripts.CS" );
+// 
+// 				CompilerParameters parms = new CompilerParameters( GetReferenceAssemblies(), path, debug );
+// 
+// 				string options = GetCompilerOptions( debug );
+// 
+// 				if( options != null )
+// 					parms.CompilerOptions = options;
+// 
+// 				if( Core.HaltOnWarning )
+// 					parms.WarningLevel = 4;
+// 
+// #if !MONO
+// 				CompilerResults results = provider.CompileAssemblyFromFile( parms, files );
+// #else
+// 				parms.CompilerOptions = String.Format( "{0} /nowarn:169,219,414 /recurse:Scripts/*.cs", parms.CompilerOptions );
+// 				CompilerResults results = provider.CompileAssemblyFromFile( parms, "" );
+// #endif
+// 				m_AdditionalReferences.Add( path );
+// 
+// 				Display( results );
+// 
+// #if !MONO
+// 				if( results.Errors.Count > 0 )
+// 				{
+// 					assembly = null;
+// 					return false;
+// 				}
+// #else
+// 				if( results.Errors.Count > 0 ) {
+// 					foreach( CompilerError err in results.Errors ) {
+// 						if ( !err.IsWarning ) {
+// 							assembly = null;
+// 							return false;
+// 						}
+// 					}
+// 				}
+// #endif
+// 
+// 
+// 				if( cache && Path.GetFileName( path ) == "Scripts.CS.dll" )
+// 				{
+// 					try
+// 					{
+// 						byte[] hashCode = GetHashCode( path, files, debug );
+// 
+// 						using( FileStream fs = new FileStream( "Scripts/Output/Scripts.CS.hash", FileMode.Create, FileAccess.Write, FileShare.None ) )
+// 						{
+// 							using( BinaryWriter bin = new BinaryWriter( fs ) )
+// 							{
+// 								bin.Write( hashCode, 0, hashCode.Length );
+// 							}
+// 						}
+// 					}
+// 					catch
+// 					{
+// 					}
+// 				}
+// 
+// 				assembly = results.CompiledAssembly;
+// 				return true;
+// 			}
 		}
 
 		public static bool CompileVBScripts( out Assembly assembly )
