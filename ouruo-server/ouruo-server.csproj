@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA29E0C8-3C7D-4444-A3B2-CC2CC58B8073}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ouruo_server</RootNamespace>
+    <AssemblyName>ouruo-server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\AggressorInfo.cs" />
+    <Compile Include="src\AssemblyInfo.cs" />
+    <Compile Include="src\Attributes.cs" />
+    <Compile Include="src\BaseVendor.cs" />
+    <Compile Include="src\Body.cs" />
+    <Compile Include="src\ClientVersion.cs" />
+    <Compile Include="src\Commands.cs" />
+    <Compile Include="src\ContextMenus\ContextMenu.cs" />
+    <Compile Include="src\ContextMenus\ContextMenuEntry.cs" />
+    <Compile Include="src\ContextMenus\OpenBackpackEntry.cs" />
+    <Compile Include="src\ContextMenus\PaperdollEntry.cs" />
+    <Compile Include="src\Diagnostics\BaseProfile.cs" />
+    <Compile Include="src\Diagnostics\GumpProfile.cs" />
+    <Compile Include="src\Diagnostics\PacketProfile.cs" />
+    <Compile Include="src\Diagnostics\TargetProfile.cs" />
+    <Compile Include="src\Diagnostics\TimerProfile.cs" />
+    <Compile Include="src\Effects.cs" />
+    <Compile Include="src\EventLog.cs" />
+    <Compile Include="src\EventSink.cs" />
+    <Compile Include="src\ExpansionInfo.cs" />
+    <Compile Include="src\Geometry.cs" />
+    <Compile Include="src\Guild.cs" />
+    <Compile Include="src\Gumps\Gump.cs" />
+    <Compile Include="src\Gumps\GumpAlphaRegion.cs" />
+    <Compile Include="src\Gumps\GumpBackground.cs" />
+    <Compile Include="src\Gumps\GumpButton.cs" />
+    <Compile Include="src\Gumps\GumpCheck.cs" />
+    <Compile Include="src\Gumps\GumpEntry.cs" />
+    <Compile Include="src\Gumps\GumpGroup.cs" />
+    <Compile Include="src\Gumps\GumpHtml.cs" />
+    <Compile Include="src\Gumps\GumpHtmlLocalized.cs" />
+    <Compile Include="src\Gumps\GumpImage.cs" />
+    <Compile Include="src\Gumps\GumpImageTileButton.cs" />
+    <Compile Include="src\Gumps\GumpImageTiled.cs" />
+    <Compile Include="src\Gumps\GumpItem.cs" />
+    <Compile Include="src\Gumps\GumpLabel.cs" />
+    <Compile Include="src\Gumps\GumpLabelCropped.cs" />
+    <Compile Include="src\Gumps\GumpPage.cs" />
+    <Compile Include="src\Gumps\GumpRadio.cs" />
+    <Compile Include="src\Gumps\GumpTextEntry.cs" />
+    <Compile Include="src\Gumps\GumpTextEntryLimited.cs" />
+    <Compile Include="src\Gumps\GumpTooltip.cs" />
+    <Compile Include="src\Gumps\RelayInfo.cs" />
+    <Compile Include="src\HuePicker.cs" />
+    <Compile Include="src\IAccount.cs" />
+    <Compile Include="src\IEntity.cs" />
+    <Compile Include="src\Insensitive.cs" />
+    <Compile Include="src\Interfaces.cs" />
+    <Compile Include="src\Item.cs" />
+    <Compile Include="src\ItemBounds.cs" />
+    <Compile Include="src\Items\BaseMulti.cs" />
+    <Compile Include="src\Items\Container.cs" />
+    <Compile Include="src\Items\Containers.cs" />
+    <Compile Include="src\Items\SecureTradeContainer.cs" />
+    <Compile Include="src\Items\VirtualHair.cs" />
+    <Compile Include="src\KeywordList.cs" />
+    <Compile Include="src\Main.cs" />
+    <Compile Include="src\Map.cs" />
+    <Compile Include="src\Menus\IMenu.cs" />
+    <Compile Include="src\Menus\ItemListMenu.cs" />
+    <Compile Include="src\Menus\QuestionMenu.cs" />
+    <Compile Include="src\Mobile.cs" />
+    <Compile Include="src\Movement.cs" />
+    <Compile Include="src\MultiData.cs" />
+    <Compile Include="src\NativeReader.cs" />
+    <Compile Include="src\Network\BufferPool.cs" />
+    <Compile Include="src\Network\ByteQueue.cs" />
+    <Compile Include="src\Network\Compression.cs" />
+    <Compile Include="src\Network\EncodedPacketHandler.cs" />
+    <Compile Include="src\Network\EncodedReader.cs" />
+    <Compile Include="src\Network\Listener.cs" />
+    <Compile Include="src\Network\MessagePump.cs" />
+    <Compile Include="src\Network\NetState.cs" />
+    <Compile Include="src\Network\PacketHandler.cs" />
+    <Compile Include="src\Network\PacketHandlers.cs" />
+    <Compile Include="src\Network\PacketReader.cs" />
+    <Compile Include="src\Network\Packets.cs" />
+    <Compile Include="src\Network\PacketWriter.cs" />
+    <Compile Include="src\Network\SendQueue.cs" />
+    <Compile Include="src\Notoriety.cs" />
+    <Compile Include="src\ObjectPropertyList.cs" />
+    <Compile Include="src\Party.cs" />
+    <Compile Include="src\Persistence\BinaryMemoryWriter.cs" />
+    <Compile Include="src\Persistence\DualSaveStrategy.cs" />
+    <Compile Include="src\Persistence\DynamicSaveStrategy.cs" />
+    <Compile Include="src\Persistence\FileOperations.cs" />
+    <Compile Include="src\Persistence\FileQueue.cs" />
+    <Compile Include="src\Persistence\ParallelSaveStrategy.cs" />
+    <Compile Include="src\Persistence\QueuedMemoryWriter.cs" />
+    <Compile Include="src\Persistence\SaveMetrics.cs" />
+    <Compile Include="src\Persistence\SaveStrategy.cs" />
+    <Compile Include="src\Persistence\SequentialFileWriter.cs" />
+    <Compile Include="src\Persistence\StandardSaveStrategy.cs" />
+    <Compile Include="src\Point3DList.cs" />
+    <Compile Include="src\Poison.cs" />
+    <Compile Include="src\Prompt.cs" />
+    <Compile Include="src\QuestArrow.cs" />
+    <Compile Include="src\Race.cs" />
+    <Compile Include="src\Region.cs" />
+    <Compile Include="src\ScriptCompiler.cs" />
+    <Compile Include="src\Sector.cs" />
+    <Compile Include="src\SecureTrade.cs" />
+    <Compile Include="src\Serial.cs" />
+    <Compile Include="src\Serialization.cs" />
+    <Compile Include="src\Skills.cs" />
+    <Compile Include="src\Targeting\LandTarget.cs" />
+    <Compile Include="src\Targeting\MultiTarget.cs" />
+    <Compile Include="src\Targeting\StaticTarget.cs" />
+    <Compile Include="src\Targeting\Target.cs" />
+    <Compile Include="src\Targeting\TargetCancelType.cs" />
+    <Compile Include="src\Targeting\TargetFlags.cs" />
+    <Compile Include="src\TileData.cs" />
+    <Compile Include="src\TileList.cs" />
+    <Compile Include="src\TileMatrix.cs" />
+    <Compile Include="src\TileMatrixPatch.cs" />
+    <Compile Include="src\Timer.cs" />
+    <Compile Include="src\Utility.cs" />
+    <Compile Include="src\VirtueInfo.cs" />
+    <Compile Include="src\World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
