@@ -13,7 +13,7 @@ namespace Server.Misc
 		 * Example:
 		 *  private static string CustomPath = @"C:\Program Files\Ultima Online";
 		 */
-		private static string CustomPath = null;
+		private static string CustomPath = @"./mul";
 
 		/* The following is a list of files which a required for proper execution:
 		 * 
@@ -39,23 +39,65 @@ namespace Server.Misc
 			string pathSA = GetPath( @"Electronic Arts\EA Games\Ultima Online Stygian Abyss Classic", "InstallDir" );
 			string pathHS = GetPath( @"Electronic Arts\EA Games\Ultima Online Classic", "InstallDir" );
 
-			if ( CustomPath != null ) 
-				Core.DataDirectories.Add( CustomPath ); 
+            if (CustomPath != null)
+            {
+                Utility.PushColor(ConsoleColor.Cyan);
+                Console.WriteLine("Selecting custom path for mulfiles.");
+                Utility.PopColor();
+                Core.DataDirectories.Add(CustomPath);
+
+                return;
+            }
 
 			if ( pathUO != null ) 
-				Core.DataDirectories.Add( pathUO ); 
+            {
+                Utility.PushColor(ConsoleColor.Cyan);
+                Console.WriteLine("Autodetected Ultima Online 1.0 path for mulfiles.");
+                Utility.PopColor();
+                Core.DataDirectories.Add(pathUO);
 
-			if ( pathTD != null ) 
-				Core.DataDirectories.Add( pathTD );
+                return;
+            }
+
+			if ( pathTD != null )
+            {
+                Utility.PushColor(ConsoleColor.Cyan);
+                Console.WriteLine("Autodetected Ultima Online Third Dawn path for mulfiles.");
+                Utility.PopColor();
+                Core.DataDirectories.Add(pathTD);
+
+                return;
+            }
 
 			if ( pathKR != null )
-				Core.DataDirectories.Add( pathKR );
+            {
+                Utility.PushColor(ConsoleColor.Cyan);
+                Console.WriteLine("Autodetected Ultima Online Kingdom Reborn path for mulfiles.");
+                Utility.PopColor();
+                Core.DataDirectories.Add(pathKR);
+
+                return;
+            }
 
 			if ( pathSA != null )
-				Core.DataDirectories.Add( pathSA );
+            {
+                Utility.PushColor(ConsoleColor.Cyan);
+                Console.WriteLine("Autodetected Ultima Online Stygian Abyss path for mulfiles.");
+                Utility.PopColor();
+                Core.DataDirectories.Add(pathSA);
+
+                return;
+            }
 
 			if ( pathHS != null )
-				Core.DataDirectories.Add( pathHS );
+            {
+                Utility.PushColor(ConsoleColor.Cyan);
+                Console.WriteLine("Autodetected Ultima Online High Seas path for mulfiles.");
+                Utility.PopColor();
+                Core.DataDirectories.Add(pathHS);
+
+                return;
+            }
 
 			if ( Core.DataDirectories.Count == 0 && !Core.Service )
 			{
@@ -63,6 +105,8 @@ namespace Server.Misc
 				Console.Write( "> " );
 
 				Core.DataDirectories.Add( Console.ReadLine() );
+
+                return;
 			}
 		}
 
