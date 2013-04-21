@@ -604,7 +604,8 @@ namespace Server.Misc
 			for ( int i = 0; i < a.Length; ++i )
 			{
 				if ( a[i] == null )
-					return (a[i] = new PlayerMobile());
+					//return (a[i] = new PlayerMobile());
+                    return (a[i] = new OurUOPlayerMobile());
 			}
 
 			return null;
