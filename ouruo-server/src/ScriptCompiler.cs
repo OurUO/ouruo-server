@@ -552,8 +552,8 @@ namespace Server
 
 		public static bool Compile( bool debug, bool cache )
 		{
-			EnsureDirectory( "Scripts/" );
-			EnsureDirectory( "Scripts/Output/" );
+//			EnsureDirectory( "Scripts/" );
+//			EnsureDirectory( "Scripts/Output/" );
 
 			if( m_AdditionalReferences.Count > 0 )
 				m_AdditionalReferences.Clear();
