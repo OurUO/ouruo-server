@@ -111,6 +111,7 @@
     <Compile Include="src\Context Menus\EjectPlayer.cs" />
     <Compile Include="src\Context Menus\OpenBankEntry.cs" />
     <Compile Include="src\Context Menus\TeachEntry.cs" />
+    <Compile Include="src\Custom\OurUOPlayerMobile.cs" />
     <Compile Include="src\Engines\BulkOrders\Books\BOBFilter.cs" />
     <Compile Include="src\Engines\BulkOrders\Books\BOBFilterGump.cs" />
     <Compile Include="src\Engines\BulkOrders\Books\BOBGump.cs" />
@@ -3236,6 +3237,7 @@
   <ItemGroup>
     <Content Include="src\SpecialSystems\README.TXT" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) ..\..\..\ouruo-server-bin</PostBuildEvent>
