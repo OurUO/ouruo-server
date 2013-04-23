@@ -19,11 +19,11 @@ namespace Server.Misc
 			Kick
 		}
 
-		private static bool m_DetectClientRequirement = true;
+		private static bool m_DetectClientRequirement = false;
 		private static OldClientResponse m_OldClientResponse = OldClientResponse.LenientKick;
 
-		private static ClientVersion m_Required;
-		private static bool m_AllowRegular = true, m_AllowUOTD = true, m_AllowGod = true;
+		private static ClientVersion m_Required = new ClientVersion("7.0.10.3");
+		private static bool m_AllowRegular = true, m_AllowUOTD = false, m_AllowGod = false;
 
 		private static TimeSpan m_AgeLeniency = TimeSpan.FromDays( 10 );
 		private static TimeSpan m_GameTimeLeniency = TimeSpan.FromHours( 25 );

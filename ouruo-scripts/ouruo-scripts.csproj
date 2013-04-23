@@ -111,6 +111,15 @@
     <Compile Include="src\Context Menus\EjectPlayer.cs" />
     <Compile Include="src\Context Menus\OpenBankEntry.cs" />
     <Compile Include="src\Context Menus\TeachEntry.cs" />
+    <Compile Include="src\Custom\Encryption\Encryption.cs" />
+    <Compile Include="src\Custom\Encryption\Game Encryption.cs" />
+    <Compile Include="src\Custom\Encryption\GameEncryption.cs" />
+    <Compile Include="src\Custom\Encryption\IClientEncryption.cs" />
+    <Compile Include="src\Custom\Encryption\LoginEncryption.cs" />
+    <Compile Include="src\Custom\Encryption\LoginKey.cs" />
+    <Compile Include="src\Custom\Encryption\NoEncryption.cs" />
+    <Compile Include="src\Custom\Encryption\TwofishBase.cs" />
+    <Compile Include="src\Custom\Encryption\TwofishEncryption.cs" />
     <Compile Include="src\Custom\OurUOPlayerMobile.cs" />
     <Compile Include="src\Engines\BulkOrders\Books\BOBFilter.cs" />
     <Compile Include="src\Engines\BulkOrders\Books\BOBFilterGump.cs" />
