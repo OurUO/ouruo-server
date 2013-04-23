@@ -1,3 +1,3 @@
 #!/bin/bash
-gcms -optimize -unsafe -d:MONO -out:ouruo-server.exe -recurse:src/*.cs
+gmcs -optimize -unsafe -d:MONO -out:ouruo-server.exe -recurse:src/*.cs
 mv ouruo-server.exe ../ouruo-server-bin/
