@@ -72,25 +72,121 @@
 		<dogma></dogma>
 	</god>
 	<god>
-		<name></name>
-		<level></level>
-		<alignment></alignment>
-		<domain></domain>
-		<domain></domain>
-		<domain></domain>
-		<domain></domain>
-		<preferred_weapon></preferred_weapon>
+		<name>Gilean</name>
+		<level>Maggiore</level>
+		<alignment>N</alignment>
+		<domain>Conoscenza</domain>
+		<domain>Liberazione</domain>
+		<domain>Protezione</domain>
+		<preferred_weapon>Bastone ferrato</preferred_weapon>
 		<dogma></dogma>
 	</god>
 	<god>
-		<name></name>
-		<level></level>
-		<alignment></alignment>
-		<domain></domain>
-		<domain></domain>
-		<domain></domain>
-		<domain></domain>
-		<preferred_weapon></preferred_weapon>
+		<name>Lunitari</name>
+		<level>Intermedia</level>
+		<alignment>N</alignment>
+		<domain>Nessuno</domain>
+		<preferred_weapon>Nessuna</preferred_weapon>
 		<dogma></dogma>
+	</god>
+	<god>
+		<name>Reorx</name>
+		<level>Maggiore</level>
+		<alignment>N</alignment>
+		<domain>Forgia</domain>
+		<domain>Fuoco</domain>
+		<domain>Terra</domain>
+		<preferred_weapon>Martello da guerra</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Shinare</name>
+		<level>Intermedia</level>
+		<alignment>LN</alignment>
+		<domain>Fortuna</domain>
+		<domain>Legge</domain>
+		<domain>Viaggio</domain>
+		<preferred_weapon>Mazza leggera</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Sirrion</name>
+		<level>Intermedia</level>
+		<alignment>CN</alignment>
+		<domain>Caos</domain>
+		<domain>Fuoco</domain>
+		<domain>Passione</domain>
+		<preferred_weapon>Mazzafrusto pesante</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Zivilyn</name>
+		<level>Intermedia</level>
+		<alignment>N</alignment>
+		<domain>Conoscenza</domain>
+		<domain>Intuizione</domain>
+		<domain>Meditazione</domain>
+		<preferred_weapon>Bastone ferrato</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Chemosh</name>
+		<level>Intermedia</level>
+		<alignment>NM</alignment>
+		<domain>Inganno</domain>
+		<domain>Male</domain>
+		<domain>Morte</domain>
+		<preferred_weapon>Falcetto</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Hiddukel</name>
+		<level>Intermedia</level>
+		<alignment>CM</alignment>
+		<domain>Inganno</domain>
+		<domain>Male</domain>
+		<domain>Tradimento</domain>
+		<preferred_weapon>Pugnale</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Morgion</name>
+		<level>Intermedia</level>
+		<alignment>NM</alignment>
+		<domain>Distruzione</domain>
+		<domain>Male</domain>
+		<domain>Pestilenza</domain>
+		<preferred_weapon>Mazzafrusto pesante</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Nuitari</name>
+		<level>Intermedia</level>
+		<alignment>LM</alignment>
+		<domain>Nessuno</domain>
+		<preferred_weapon>Nessuna</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Sargonnas</name>
+		<level>Maggiore</level>
+		<alignment>LM</alignment>
+		<domain>Fuoco</domain>
+		<domain>Guerra</domain>
+		<domain>Legge</domain>
+		<domain>Male</domain>
+		<preferred_weapon>Ascia grande</preferred_weapon>
+		<dogma></dogma>
+	</god>
+	<god>
+		<name>Zeboim</name>
+		<level>Intermedia</level>
+		<alignment>CM</alignment>
+		<domain>Acqua</domain>
+		<domain>Caos</domain>
+		<domain>Male</domain>
+		<domain>Tempeste</domain>
+		<preferred_weapon>Tridente</preferred_weapon>
+		<dogma>I popoli temono e rispettano la furia. Nessun marinaio è al sicuro, a meno che la Regina del Mare così non voglia, quindi adorala e falle molte offerte. Prima o poi il mare consumerà tutto, e tutte le terre verranno sommerse dalla potenza di Zeboim. Adorala, o sii spazzato dalla tempesta.</dogma>
 	</god>
 </deities>
